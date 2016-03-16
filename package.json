@@ -1,0 +1,39 @@
+{
+  "name": "grunticon-101",
+  "version": "1.0.0",
+  "description": "Grunticon 101 Demo for the Front End Rally",
+  "main": "n/a",
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/FrontEndRally/grunticon-101.git"
+  },
+  "keywords": [
+    "grunt",
+    "grunticon",
+    "fer"
+  ],
+  "author": "Sean Dempsey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FrontEndRally/grunticon-101/issues"
+  },
+  "homepage": "https://github.com/FrontEndRally/grunticon-101#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.3.3",
+    "grunt": "^0.4.5",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-imagemin": "^1.0.0",
+    "grunt-newer": "^1.1.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-postcss": "^0.8.0",
+    "grunt-sass": "^1.1.0",
+    "grunt-grunticon": "^2.2.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "load-grunt-tasks": "^3.4.1"
+    }
+}

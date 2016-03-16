@@ -5,7 +5,8 @@ module.exports = function(grunt) {
         scripts: 'assets/js',
         css: 'assets/css',
         images: 'assets/img',
-        scss: 'assets/scss'
+        scss: 'assets/scss',
+        grunticon: 'assets/grunticon'
     };
 
     grunt.initConfig({
@@ -33,31 +34,58 @@ module.exports = function(grunt) {
                 dest: '<%= globalConfig.scripts %>/main.js'
             }
         },
-        imagemin: {
+        copy: {
+            grunticon: {
+                files: [{
+                    expand: true,
+                    flatten: true,
+                    src: ['<%= globalConfig.grunticon %>/dist/grunticon.js'],
+                    dest: '<%= globalConfig.scripts %>/libraries/', filter: 'isFile'
+                }],
+                options: {
+                    timestamp: true
+                }
+            }
+        },
+        grunticon: {
             debug: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= globalConfig.grunticon %>/source',
+                    src: ['*.svg'],
+                    dest: '<%= globalConfig.grunticon %>/dist'
+                }],
+                options: {
+                    compress: true,
+                    corsEmbed: true,
+                    cssprefix: '.icon-',
+                    defaultHeight: '32px',
+                    defaultWidth: '32px',
+                    enhanceSVG: true,
+                    loadersnippet: 'grunticon.js'
+                }
+            }
+        },
+        imagemin: {
+            grunticon: {
                 options: {
                     optimizationLevel: 7
                 },
                 files: [{
                     expand: true,
-                    cwd: '<%= globalConfig.images %>/source/',
-                    src: '**/*.{jpg,png,gif,svg}',
-                    dest: '<%= globalConfig.images %>/'
+                    cwd: '<%= globalConfig.grunticon %>/source/raw/',
+                    src: '*.svg',
+                    dest: '<%= globalConfig.grunticon %>/source/'
                 }]
             }
         },
-        // Stops compiling when you write bad JavaScript
         jshint: {
-            // options: {
-            //  jshintrc: true
-            // },
             all: ['<%= globalConfig.scripts %>/source/*.js']
         },
         postcss: {
             options: {
                 map: false,
                 processors: [
-                    // Auto-prefixes CSS
                     require('autoprefixer')({expand: true, flatten: true, browsers: ['ie >= 9', '> 1%', 'last 2 versions']})
                 ]
             },
@@ -78,7 +106,6 @@ module.exports = function(grunt) {
                 }
             }
         },
-        // Checks for specified changes and refreshes browser if plugin is installed
         watch: {
             options: {
                 spawn: false
@@ -91,6 +118,9 @@ module.exports = function(grunt) {
                 files: ['<%= globalConfig.scss %>/**/*.scss'],
                 tasks: ['css']
             },
+            grunt: {
+                files: ['Gruntfile.js']
+            },
             html: {
                 files: '*.html',
                 tasks: []
@@ -101,5 +131,6 @@ module.exports = function(grunt) {
     grunt.registerTask('js', ['jshint', 'concat']);
     grunt.registerTask('css', ['sass', 'postcss']);
     grunt.registerTask('img', ['newer:imagemin']);
+    grunt.registerTask('icons', ['newer:imagemin:grunticon', 'grunticon', 'copy:grunticon']);
     grunt.registerTask('default', ['browserSync', 'watch']);
 };

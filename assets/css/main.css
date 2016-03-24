@@ -215,27 +215,27 @@ a:after {
 }
 
 .icon-cart {
-  background-image: url("/assets/img/icon-cart.svg");
+  background-image: url("../img/icon-cart.svg");
 }
 
 .icon-like {
-  background-image: url("/assets/img/icon-like.svg");
+  background-image: url("../img/icon-like.svg");
 }
 
 .icon-location {
-  background-image: url("/assets/img/icon-location.svg");
+  background-image: url("../img/icon-location.svg");
 }
 
 .icon-menu {
-  background-image: url("/assets/img/icon-menu.svg");
+  background-image: url("../img/icon-menu.svg");
 }
 
 .icon-mic {
-  background-image: url("/assets/img/icon-mic.svg");
+  background-image: url("../img/icon-mic.svg");
 }
 
 .icon-search {
-  background-image: url("/assets/img/icon-search.svg");
+  background-image: url("../img/icon-search.svg");
 }
 
 .inline-svg .gallery:hover svg:nth-child(1) {

@@ -94,7 +94,7 @@ a {
 $icons: cart, like, location, menu, mic, search;
 @each $icon in $icons {
     .icon-#{$icon} {
-        background-image: url('/assets/img/icon-#{$icon}.svg');
+        background-image: url('../img/icon-#{$icon}.svg');
     }
 }
 

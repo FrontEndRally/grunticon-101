@@ -1,5 +1,5 @@
 @import 'mixins';
-@import 'fonts';
+@import 'reset';
 
 //  /*
 //     ========================================
@@ -8,17 +8,28 @@
 //  */
 
 $white: #fff;
-$black: #2c313b;
-$white: #fff;
-$blue: #00aaec;
+$black: #000;
 
 //scss-lint:disable ColorVariable
 $colors: (
-    body-bg: $white,
-    body-copy: $black,
-    selection-color: $white,
-    selection-bg: $blue,
-    a-color: $blue
+	body-bg: $white,
+	body-copy: $black,
+	pulse: rgba($white, 0.5),
+	shadow: (
+		1: rgba($black, 0.16),
+		2: rgba($black, 0.26),
+		3: rgba($black, 0.32)
+	),
+	primary: (
+		100: #b2dfbb,
+		500: #009688,
+		700: #00796b
+	),
+	accent: (
+		100: #ff80ab,
+		200: #ff4081,
+		400: #f50057
+	)
 );
 
 @function color($key) {
@@ -30,6 +41,13 @@ $colors: (
     @return null;
 }
 
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+
 
 //  /*
 //     ========================================
@@ -37,21 +55,13 @@ $colors: (
 //     ========================================
 //  */
 
-
-
-$small: em(600px);      // 37.5em
-$medium: em(760px);     // 47.5em
-$large: em(1000px);     // 62.5em
-
 $breakpoints: (
-    small: $small,
-    medium: $medium,
-    large: $large,
+    six: em(600px),
+    seven-six: em(760px),
+    ten: em(1000px)
 );
 
-// new respond-to mixin! Takes either a map value or a unit value
-// @include respond-to(small) & @include respond-to(599px, max)
-// are both valid
+// @include respond-to(small) & @include respond-to(599px, max) are both valid
 
 @mixin respond-to($breakpoint, $minmax:'min') {
     @if map-has-key($breakpoints, $breakpoint) {
@@ -67,27 +77,11 @@ $breakpoints: (
 
 //  /*
 //     ========================================
-//         ::Z Index Map and Function
+//         ::Fonts
 //     ========================================
 //  */
 
-$z-index: (
-    header: 1,
-    botomless-pit: -99999,
-    mount-everest: 99999
-);
-
-@function z($key) {
-    @if map-has-key($z-index, $key) {
-        @return map-get($z-index, $key);
-    }
-
-    @warn unquote('"Unkown "#{$key}" in $z-index."');
-    @return null;
-}
-
-
-$base-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-stack: 'Roboto', sans-serif;
 
 $fonts: (
     base: $base-stack
@@ -102,15 +96,9 @@ $fonts: (
     @return null;
 }
 
-//  /*
-//     ========================================
-//         ::Font Weights
-//     ========================================
-//  */
-
 $weights: (
     regular: 400,
-    bold: 700
+    medium: 500
 );
 
 @function fw($key) {
@@ -120,4 +108,70 @@ $weights: (
 
     @warn unquote('"Unkown "#{$key}" in $weights."');
     @return null;
+}
+
+$hover-in: 0.15s ease(in-quart);
+$hover-out: 0.2s ease(out-quart);
+
+//  /*
+//     ========================================
+//         ::Global Styles
+//     ========================================
+//  */
+
+html {
+    box-sizing: border-box;
+    font-size: 60%;
+
+    @include respond-to(six) {
+        font-size: 61.25%;
+    }
+
+    @include respond-to(ten) {
+        font-size: 62.5%;
+    }
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    @include font-smoothing;
+    background: color(body-bg);
+    color: color(body-copy);
+    font: normal fw(regular) 1.6rem / 1.65 family(base);
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 0 1.5rem;
+
+    @include respond-to(ten) {
+        padding: 0;
+    }
+}
+
+.screen-reader-text {
+    @include screen-reader-text;
+}
+
+.main {
+    margin-top: 6.4rem;
+    min-height: calc(100vh - 12.8rem);
+}
+
+section {
+    padding: 2.5rem 0;
+
+    @include respond-to(ten) {
+        padding: 5rem 0;
+    }
+
+    + section {
+        border-top: 1px solid rgba($black, 0.2);
+    }
 }

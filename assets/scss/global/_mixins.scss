@@ -636,3 +636,8 @@
         //default: rgba(0, 0, 0, 0.4)
         -webkit-tap-highlight-color: $color;
     }
+
+    @mixin square($size) {
+        height: $size;
+        width: $size;
+    }

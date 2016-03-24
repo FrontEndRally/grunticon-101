@@ -3,16 +3,118 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Grunticon 101 - Front End Rally</title>
+        <title>SVG Icon Systems | Front End Rally</title>
         <meta name="description" content="This site will never be live.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="assets/css/normalize.css">
-        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Roboto:400,500,500italic">
+        <link rel="stylesheet prefetch" href="assets/css/main.css">
     </head>
     <body>
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <a class="screen-reader-text" href="#main">Skip to content</a>
+        <header class="body-header" role="banner">
+            <div class="container">
+                <h1>SVG Icon Systems</h1>
+            </div>
+        </header>
+        <main class="main" id="main" role="main">
+            <article class="main-content">
+                <div class="container">
+                    <section class="img-tag">
+                        <h2>&lt;img src="SVG"&gt;</h2>
+                        <h3>Neat! Can't do much with em though.</h3>
+                        <div class="gallery">
+                            <img src="assets/img/icon-cart.svg" alt="Cart Icon" width="32" height="32">
+                            <img src="assets/img/icon-like.svg" alt="Thumbs Up Icon" width="32" height="32">
+                            <img src="assets/img/icon-location.svg" alt="Location Icon" width="32" height="32">
+                            <img src="assets/img/icon-menu.svg" alt="Menu Icon" width="32" height="32">
+                            <img src="assets/img/icon-mic.svg" alt="Microphone Icon" width="32" height="32">
+                            <img src="assets/img/icon-search.svg" alt="Search Icon" width="32" height="32">
+                        </div>
+                    </section>
+                    <section class="background-images">
+                        <h2>Also, CSS Background Images</h2>
+                        <h3>Same deal as img tags.  We have icons, but can't style or manipulate them in anyway.</h3>
+                        <div class="gallery">
+                            <i class="icon icon-cart"></i>
+                            <i class="icon icon-like"></i>
+                            <i class="icon icon-location"></i>
+                            <i class="icon icon-menu"></i>
+                            <i class="icon icon-mic"></i>
+                            <i class="icon icon-search"></i>
+                        </div>
+                    </section>
+                    <section class="inline-svg">
+                        <h2>Inline SVG</h2>
+                        <h3>Let's style those Icons!</h3>
+                        <div class="gallery">
+                            <svg width="32px" height="32px" viewBox="0 0 32 32"><path d="M9.6,25.6c-1.76,0-3.18,1.44-3.18,3.2c0,1.76,1.42,3.2,3.18,3.2s3.2-1.44,3.2-3.2C12.8,27.04,11.36,25.6,9.6,25.6z M0,0v3.2 h3.2l5.76,12.14L6.8,19.26c-0.26,0.45-0.4,0.98-0.4,1.54c0,1.76,1.44,3.2,3.2,3.2h19.2v-3.2H10.27c-0.22,0-0.4-0.18-0.4-0.4 l0.05-0.19l1.44-2.61h11.92c1.2,0,2.26-0.66,2.8-1.65l5.73-10.38C31.94,5.34,32,5.07,32,4.8c0-0.88-0.72-1.6-1.6-1.6H6.74L5.23,0 C5.23,0,0,0,0,0z M25.6,25.6c-1.76,0-3.18,1.44-3.18,3.2c0,1.76,1.42,3.2,3.18,3.2c1.76,0,3.2-1.44,3.2-3.2 C28.8,27.04,27.36,25.6,25.6,25.6z"/></svg>
+                            <svg width="32px" height="32px" viewBox="0 0 32 32"><path d="M0,30.55h5.82V13.09H0V30.55z M32,14.55c0-1.6-1.31-2.91-2.91-2.91h-9.18l1.38-6.65l0.04-0.47c0-0.6-0.25-1.15-0.64-1.54 l-1.54-1.53l-9.57,9.59c-0.54,0.52-0.86,1.25-0.86,2.05v14.55c0,1.6,1.31,2.91,2.91,2.91h13.09c1.21,0,2.24-0.73,2.68-1.77 l4.39-10.25c0.13-0.33,0.2-0.68,0.2-1.06v-2.78l-0.01-0.01L32,14.55z"/></svg>
+                            <svg width="32px" height="32px" viewBox="0 0 32 32"><path d="M16,0C9.81,0,4.8,5.01,4.8,11.2C4.8,19.6,16,32,16,32s11.2-12.4,11.2-20.8C27.2,5.01,22.19,0,16,0z M16,15.2 c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S18.21,15.2,16,15.2z"/></svg>
+                            <svg width="32px" height="32px" viewBox="0 0 32 32"><path d="M0,26.67h32v-3.56H0V26.67z M0,17.78h32v-3.56H0V17.78z M0,5.33v3.56h32V5.33H0z"/></svg>
+                            <svg width="32px" height="32px" viewBox="0 0 32 32"><path d="M16,20.21c2.8,0,5.04-2.26,5.04-5.05l0.02-10.11C21.05,2.26,18.8,0,16,0s-5.05,2.26-5.05,5.05v10.11 C10.95,17.95,13.2,20.21,16,20.21z M24.93,15.16c0,5.05-4.28,8.59-8.93,8.59s-8.93-3.54-8.93-8.59H4.21 c0,5.74,4.58,10.49,10.11,11.32V32h3.37v-5.52c5.52-0.81,10.11-5.56,10.11-11.32H24.93z"/></svg>
+                            <svg width="32px" height="32px" viewBox="0 0 32 32"><path d="M22.87,20.13h-1.45l-0.51-0.49c1.79-2.09,2.87-4.79,2.87-7.74C23.79,5.32,18.46,0,11.89,0S0,5.32,0,11.89 s5.32,11.89,11.89,11.89c2.95,0,5.65-1.08,7.74-2.87l0.49,0.51v1.45L29.27,32L32,29.27L22.87,20.13z M11.89,20.13 c-4.56,0-8.23-3.68-8.23-8.23s3.68-8.23,8.23-8.23s8.23,3.68,8.23,8.23S16.45,20.13,11.89,20.13z"/></svg>
+                        </div>
+                    </section>
+                    <section class="spriting">
+                        <svg display="none">
+                            <symbol id="icon-cart" viewBox="0 0 32 32">
+                                <path d="M9.6,25.6c-1.76,0-3.18,1.44-3.18,3.2c0,1.76,1.42,3.2,3.18,3.2s3.2-1.44,3.2-3.2C12.8,27.04,11.36,25.6,9.6,25.6z M0,0v3.2 h3.2l5.76,12.14L6.8,19.26c-0.26,0.45-0.4,0.98-0.4,1.54c0,1.76,1.44,3.2,3.2,3.2h19.2v-3.2H10.27c-0.22,0-0.4-0.18-0.4-0.4 l0.05-0.19l1.44-2.61h11.92c1.2,0,2.26-0.66,2.8-1.65l5.73-10.38C31.94,5.34,32,5.07,32,4.8c0-0.88-0.72-1.6-1.6-1.6H6.74L5.23,0 C5.23,0,0,0,0,0z M25.6,25.6c-1.76,0-3.18,1.44-3.18,3.2c0,1.76,1.42,3.2,3.18,3.2c1.76,0,3.2-1.44,3.2-3.2 C28.8,27.04,27.36,25.6,25.6,25.6z"/>
+                            </symbol>
+                            <symbol id="icon-like" viewBox="0 0 32 32">
+                                <path d="M0,30.55h5.82V13.09H0V30.55z M32,14.55c0-1.6-1.31-2.91-2.91-2.91h-9.18l1.38-6.65l0.04-0.47c0-0.6-0.25-1.15-0.64-1.54 l-1.54-1.53l-9.57,9.59c-0.54,0.52-0.86,1.25-0.86,2.05v14.55c0,1.6,1.31,2.91,2.91,2.91h13.09c1.21,0,2.24-0.73,2.68-1.77 l4.39-10.25c0.13-0.33,0.2-0.68,0.2-1.06v-2.78l-0.01-0.01L32,14.55z"/>
+                            </symbol>
+                            <symbol id="icon-location" viewBox="0 0 32 32">
+                                <path d="M16,0C9.81,0,4.8,5.01,4.8,11.2C4.8,19.6,16,32,16,32s11.2-12.4,11.2-20.8C27.2,5.01,22.19,0,16,0z M16,15.2 c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S18.21,15.2,16,15.2z"/>
+                            </symbol>
+                            <symbol id="icon-menu" viewBox="0 0 32 32">
+                                <path d="M0,26.67h32v-3.56H0V26.67z M0,17.78h32v-3.56H0V17.78z M0,5.33v3.56h32V5.33H0z"/>
+                            </symbol>
+                            <symbol id="icon-mic" viewBox="0 0 32 32">
+                                <path d="M16,20.21c2.8,0,5.04-2.26,5.04-5.05l0.02-10.11C21.05,2.26,18.8,0,16,0s-5.05,2.26-5.05,5.05v10.11 C10.95,17.95,13.2,20.21,16,20.21z M24.93,15.16c0,5.05-4.28,8.59-8.93,8.59s-8.93-3.54-8.93-8.59H4.21 c0,5.74,4.58,10.49,10.11,11.32V32h3.37v-5.52c5.52-0.81,10.11-5.56,10.11-11.32H24.93z"/>
+                            </symbol>
+                            <symbol id="icon-search" viewBox="0 0 32 32">
+                                <path d="M22.87,20.13h-1.45l-0.51-0.49c1.79-2.09,2.87-4.79,2.87-7.74C23.79,5.32,18.46,0,11.89,0S0,5.32,0,11.89 s5.32,11.89,11.89,11.89c2.95,0,5.65-1.08,7.74-2.87l0.49,0.51v1.45L29.27,32L32,29.27L22.87,20.13z M11.89,20.13 c-4.56,0-8.23-3.68-8.23-8.23s3.68-8.23,8.23-8.23s8.23,3.68,8.23,8.23S16.45,20.13,11.89,20.13z"/>
+                            </symbol>
+                        </svg>
+                        <h2>Inline SVG Spriting</h2>
+                        <h3>These are styled using currentColor!</h3>
 
-        <script src="assets/js/vendor/jquery-1.12.0.min.js"></script>
+                        <div class="gallery">
+                            <svg width="32" height="32" class="icon-cart">
+                                <use xlink:href="#icon-cart"></use>
+                            </svg>
+                            <svg width="32" height="32" class="icon-like">
+                                <use xlink:href="#icon-like"></use>
+                            </svg>
+                            <svg width="32" height="32" class="icon-location">
+                                <use xlink:href="#icon-location"></use>
+                            </svg>
+                            <svg width="32" height="32" class="icon-menu">
+                                <use xlink:href="#icon-menu"></use>
+                            </svg>
+                            <svg width="32" height="32" class="icon-mic">
+                                <use xlink:href="#icon-mic"></use>
+                            </svg>
+                            <svg width="32" height="32" class="icon-search">
+                                <use xlink:href="#icon-search"></use>
+                            </svg>
+                        </div>
+                    </section>
+                    <section class="object-embed">
+                        <h2>&lt;object data="SVG"&gt;</h2>
+                        <h3>It's a giant shopping cart! Resize the window and watch it scale!</h3>
+                        <object data="assets/img/icon-cart-obj.svg" type="image/svg+xml"></object>
+                    </section>
+                </div>
+            </article>
+        </main>
+        <footer class="body-footer" role="contentinfo">
+            <div class="container">
+                &copy;2016 - <a href="http://frontendrally.com" target="_blank">Front End Rally</a>
+            </div>
+        </footer>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
         <script src="assets/js/main.js"></script>
     </body>
 </html>

@@ -18,7 +18,8 @@ module.exports = function(grunt) {
                     src: [
                         '<%= globalConfig.scripts %>/*.js',
                         '<%= globalConfig.css %>/*.css',
-                        '<%= globalConfig.images %>/**/*.{jpg,gif,png,svg}'
+                        '<%= globalConfig.images %>/**/*.{jpg,gif,png,svg}',
+                        '*.html'
                     ]
                 },
                 options: {
@@ -122,8 +123,7 @@ module.exports = function(grunt) {
                 files: ['Gruntfile.js']
             },
             html: {
-                files: '*.html',
-                tasks: []
+                files: '*.html'
             }
         }
     });

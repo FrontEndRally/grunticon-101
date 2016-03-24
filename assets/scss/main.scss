@@ -1,1 +1,133 @@
 @import 'global/global';
+
+h2, h3 {
+    font-weight: fw(medium);
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+
+    + h3 {
+        font-style: italic;
+        margin-top: -1.5rem;
+    }
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    max-width: 850px;
+}
+
+a {
+    color: map-deep-get($colors, accent, 400);
+    position: relative;
+    text-decoration: none;
+
+    &:hover:after {
+        transform: translate3d(-50%, 0, 0) scale3d(1, 1, 1);
+        transition: transform $hover-out;
+    }
+
+    &:after {
+        background-color: map-deep-get($colors, accent, 400);
+        bottom: -0.2rem;
+        content: '';
+        height: 1px;
+        left: 50%;
+        position: absolute;
+        transform: translate3d(-50%, 0, 0) scale3d(0, 1, 1);
+        transform-origin: center;
+        transition: transform $hover-in;
+        width: 96%;
+    }
+}
+
+.body-header {
+    background: map-deep-get($colors, primary, 500);
+    box-shadow: 0 2px 5px map-deep-get($colors, shadow, 2);
+    color: $white;
+    font-size: 2.4rem;
+    left: 0;
+    line-height: 6.4rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.body-footer {
+    background-color: rgba($black, 0.2);
+    box-shadow: 0 2px 5px map-deep-get($colors, shadow, 2);
+    line-height: 6.4rem;
+
+    a {
+        color: color(body-copy);
+    }
+}
+
+.img {
+    display: block;
+    max-width: 100%;
+}
+
+.gallery {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.background-images {
+    .icon {
+        @include square(32px);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+$icons: cart, like, location, menu, mic, search;
+@each $icon in $icons {
+    .icon-#{$icon} {
+        background-image: url('/assets/img/icon-#{$icon}.svg');
+    }
+}
+
+.inline-svg {
+
+    .gallery:hover {
+        $delay: 0;
+        @for $i from 1 through 6 {
+            svg:nth-child(#{$i}) {
+                animation: bounce 0.3s ease(in-out-quart) alternate $delay + unquote('s');
+            }
+
+            $delay: $delay + 0.15;
+        }
+    }
+
+    svg {
+        fill: map-deep-get($colors, accent, 400);
+    }
+}
+
+@keyframes bounce {
+    50% {transform: translate3d(0, 1rem, 0); }
+    100% {transform: translate3d(0, 0, 0); }
+}
+
+.spriting {
+    color: map-deep-get($colors, primary, 500);
+
+    h2,h3 {
+        color: $black;
+    }
+    svg {
+        fill: currentColor;
+    }
+}

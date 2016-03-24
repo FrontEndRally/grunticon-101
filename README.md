@@ -8,6 +8,7 @@ Based on the popular talk by Sean Dempsey!
 * Run `npm install` - grab a soda, maybe?
 * Run `grunt` to start browserSync's static file server.
 * Open up the inspector and go nuckin' futs!
+* OR, the heck with all that noise and just go here: http://frontendrally.github.io/svg-icon-systems/
 
 ## Slides
 [SVG Icon Systems](http://slides.com/seandempsey/svg-icon-systems)
